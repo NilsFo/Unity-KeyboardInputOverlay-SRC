@@ -6,22 +6,41 @@ using UnityEditor.SceneManagement;
 
 public static class CreateUtility
 {
+    
+    [MenuItem("GameObject/Keyboard Input Overlay/Mouse")]
+    public static void CreateKeyBoardMouse(MenuCommand menuCommand)
+    {
+        GameObject newObject = CreatePrefab("KeyBoardInputOverlay - Mouse");
+        Debug.LogWarning("Note: You must attach the Keyboard to a Canvas.", newObject);
+    }
+    
     [MenuItem("GameObject/Keyboard Input Overlay/Keyboard - QWERTZ")]
     public static void CreateKeyBoardQWERTZ(MenuCommand menuCommand)
     {
-        CreatePrefab("KeyBoardInputOverlay - QWERTZ");
+        GameObject newObject = CreatePrefab("KeyBoardInputOverlay - QWERTZ");
+        Debug.LogWarning("Note: You must attach the Keyboard to a Canvas.", newObject);
+    }
+    
+    [MenuItem("GameObject/Keyboard Input Overlay/Keyboard - QWERTY")]
+    public static void CreateKeyBoardQWERTY(MenuCommand menuCommand)
+    {
+        GameObject newObject = CreatePrefab("KeyBoardInputOverlay - QWERTY");
+        Debug.LogWarning("Note: You must attach the Keyboard to a Canvas.", newObject);
     }
 
-    private static void CreatePrefab(string path)
+    private static GameObject CreatePrefab(string path)
     {
         GameObject newObject = PrefabUtility.InstantiatePrefab(Resources.Load(path)) as GameObject;
         Place(newObject);
+        PrefabUtility.UnpackPrefabInstance(newObject, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+        return newObject;
     }
 
-    private static void CreateObject(string name, params Type[] types)
+    private static GameObject CreateObject(string name, params Type[] types)
     {
         GameObject newObject = ObjectFactory.CreateGameObject(name, types);
         Place(newObject);
+        return newObject;
     }
 
     private static void Place(GameObject gameObject)

@@ -1,0 +1,22 @@
+{
+  "name": "de.nilsfo.unitykeyboardinputoverlay",
+  "version": "1.0.0",
+  "displayName": "Keyboard Input Overlay",
+  "description": "You can see the keyboard inputs at realtime in an UI canvas.",
+  "unity": "2021.3",
+  "documentationUrl": "https://github.com/NilsFo/Unity-KeyboardInputOverlay-Package",
+  "licensesUrl": "https://github.com/NilsFo/Unity-KeyboardInputOverlay-Package",
+  "changelogUrl": "https://github.com/NilsFo/Unity-KeyboardInputOverlay-Package/releases",
+  "dependencies": {
+  },
+  "keywords": [
+    "Keyboard",
+    "Input",
+    "UI",
+    "Overlay"
+  ],
+  "author": {
+    "name": "Nils",
+    "url": "nilsfo.de"
+  }
+}

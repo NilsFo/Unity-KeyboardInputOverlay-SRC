@@ -12,7 +12,6 @@ public class IconSwitchControllerBase : MonoBehaviour
         Debug.Assert(iconSwitcher, "No 'icon switcher' assigned to this Controller!", gameObject);
         Debug.Assert(keyCode != KeyCode.None, "The value of 'icon switcher' assigned to this Controller is 'None'!",
             gameObject);
-        Debug.Assert(keyCode != null, "No 'icon switcher' assigned to this Controller!", gameObject);
     }
 
     void Update()

@@ -1,6 +1,6 @@
 {
   "name": "de.nilsfo.unitykeyboardinputoverlay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Keyboard Input Overlay",
   "description": "You can see the keyboard inputs at realtime in an UI canvas.",
   "unity": "2021.3",

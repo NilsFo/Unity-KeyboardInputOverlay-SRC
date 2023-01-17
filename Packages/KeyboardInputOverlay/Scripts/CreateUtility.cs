@@ -1,26 +1,29 @@
 ﻿using System;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
-
+#endif
 
 public static class CreateUtility
 {
-    
+#if UNITY_EDITOR
+
     [MenuItem("GameObject/Keyboard Input Overlay/Mouse")]
     public static void CreateKeyBoardMouse(MenuCommand menuCommand)
     {
         GameObject newObject = CreatePrefab("KeyBoardInputOverlay - Mouse");
         Debug.LogWarning("Note: You must attach the Keyboard to a Canvas.", newObject);
     }
-    
+
     [MenuItem("GameObject/Keyboard Input Overlay/Keyboard - QWERTZ")]
     public static void CreateKeyBoardQWERTZ(MenuCommand menuCommand)
     {
         GameObject newObject = CreatePrefab("KeyBoardInputOverlay - QWERTZ");
         Debug.LogWarning("Note: You must attach the Keyboard to a Canvas.", newObject);
     }
-    
+
     [MenuItem("GameObject/Keyboard Input Overlay/Keyboard - QWERTY")]
     public static void CreateKeyBoardQWERTY(MenuCommand menuCommand)
     {
@@ -62,4 +65,6 @@ public static class CreateUtility
         // For prefabs, let's mark the scene as dirty for saving
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
+
+#endif
 }
